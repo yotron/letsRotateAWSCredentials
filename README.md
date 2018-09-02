@@ -1,10 +1,11 @@
+#  [![yotron](logo-yotron.png)](https://www.yotron.de)
 
-# [ ** <span style="color:green">YO</span>TRON** ](https://www.yotron.de)
-
-[ ** <span style="color:green">YO</span>TRON ** ](https://www.yotron.de) is a company which is focused on Big Data, 
+[YOTRON](https://www.yotron.de) is a company which is focused on Big Data, 
 Cloud Computing and Data Management with NOSQL and SQL-Databases. Visit us on [ www.yotron.de ](https://www.yotron.de)
 
 # AWSAccessCredentialRotation
+**Increase your security standards in AWS through the rotation of your credentials.**
+ 
 Secure standards recommend to change the access credentials frequently. Also in AWS it is recommend to rotate the credentials.
 To access AWS from AWS Command Client Interface (AWS Cli) or AWS Application Interface (AWS API) the usage of "Access Keys" is the 
 preferred way to communicate with AWS.
