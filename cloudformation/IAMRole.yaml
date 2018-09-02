@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Metadata:
+  IAM:
+    Description: "Creation of a new IAM-User for the accessKeyRotation and assign the proper policies."
+Description: ''
+Parameters:
+  UserNameParameter:
+    Type: String
+    Default: "techUserRotatedKey"
+    Description: "Name of the user to create an to add the policies."
+  PolicyNameParameter:
+    Type: String
+    Default: "manualLogRotationPolicy"
+    Description: "Name of the policy to create an to add the policies."
+Resources:
+  techUserRotatedKey:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: !Ref "UserNameParameter"
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  techUserRotatedKeyPolicies:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Ref "PolicyNameParameter"
+      PolicyDocument:
+        "Version": "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action: ['iam:CreateAccessKey', 'iam:DeleteAccessKey', 'iam:UpdateAccessKey']
+            Resource:
+              -  !GetAtt techUserRotatedKey.Arn
+      Users:
+        - !Ref 'UserNameParameter'
+  AccessKey:
+    Type: AWS::IAM::AccessKey
+    Properties:
+      UserName: !Ref 'UserNameParameter'
+    DependsOn: "techUserRotatedKey"
+Outputs:
+  AccessKey:
+    Value: !Ref 'AccessKey'
+    Description: AWSAccessKeyId of the new User
+  SecretKey:
+    Value: !GetAtt [AccessKey, SecretAccessKey]
+    Description: AWSSecretKey of the new User

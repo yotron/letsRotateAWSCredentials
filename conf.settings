@@ -1,0 +1,36 @@
+###########################################################
+# logRotation:
+# created by Joern Kleinbub, YOTRON, 30.05.2018
+# info@yotron.de, www.yotron.de
+# Requirements:
+#  AWS-CLI: https://docs.aws.amazon.com/cli/latest/userguide/installing.html (30.05.2018)
+# Description:
+#  accesskeyid: Name of the AccessKeyAttribute in AWS-CLI credential file. Usually "aws_access_key_id"
+#  secretaccesskeyid: Name of the SecretKeyAttribute in AWS-CLI credential file. Usually "aws_secret_access_key"
+#  credgroupname: The group name with the AccessCredentials in AWS-CLI credential file, "[logRotation]" = "logRotation".
+#  username: Name of the AWS-User for whom the AccessKey has to be rotated.
+#  region: AWS-Region to run the tool.
+#  credentialsfilepath: Path of the credential file. Usually <HomeFolder>/.aws/credentials
+#  host: Host of the proxy-server
+#  port: port of the proxy-server
+#  nonproxyhosts: List (comma-separated) of the host, where the proxy has to be ignored
+#  username: username to autheticate the user aganist the proxy
+#  password: password to autheticate the user aganist the proxy
+#
+#  If the proxy setting is not needed, please uncomment the setting.
+###########################################################
+
+[aws]
+accesskeyid = aws_access_key_id
+secretaccesskeyid = aws_secret_access_key
+credgroupname = logRotation
+username = techUserRotatedKey
+region = eu-central-1
+credentialsfilepath = D:\Users\JoernKleinbub\.aws\credentials
+
+[proxy]
+host = 127.0.0.1
+port = 3128
+nonproxyhosts = 127.0.0.1, localhost
+#username = <username>
+#password = <password>
