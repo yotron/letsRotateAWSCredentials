@@ -1,7 +1,7 @@
-#  [![yotron](logo-yotron.png)](https://www.yotron.de)
+#  [![yotron](logo-yotron.png)](http://www.yotron.de)
 
-[YOTRON](https://www.yotron.de) is a company which is focused on Big Data, 
-Cloud Computing and Data Management with NOSQL and SQL-Databases. Visit us on [ www.yotron.de ](https://www.yotron.de)
+[YOTRON](http://www.yotron.de) is a company which is focused on Big Data, 
+Cloud Computing and Data Management with NOSQL and SQL-Databases. Visit us on [ www.yotron.de ](http://www.yotron.de)
 
 # AWSAccessCredentialRotation
 **Increase your security standards in AWS through the rotation of your credentials.**
